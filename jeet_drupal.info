@@ -1,0 +1,45 @@
+name = Bootstrap Drupal
+description = Built to use Bootstrap.
+core = 7.x
+base theme = bootstrap
+
+regions[top]            = 'Top Header'
+regions[header]         = 'Header'
+regions[navigation]     = 'Navigation'
+regions[slider]         = 'Slider'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[preface]        = 'Preface'
+regions[sidebar_first]  = 'Primary Column'
+regions[sidebar_second] = 'Secondary Column'
+regions[content_top]    = 'Content Top'
+regions[content]        = 'Content'
+regions[content_bottom] = 'Content Bottom'
+regions[postcript_top]  = 'Postcript Top'
+regions[postcript_bottom] = 'Postcript Bottom'
+regions[footer]         = 'Footer'
+regions[footer_development]  = 'Footer Development'
+
+stylesheets[all][] = css/custom.css
+stylesheets[all][] = css/media-querie.css
+stylesheets[all][] = css/style.css
+scripts[] = js/script.js
+
+; --------------------------------------------------------------------------------
+; Enable Skinr integration.
+; --------------------------------------------------------------------------------
+
+skinr[api]                                  = 2
+skinr[directory]                            = skins
+
+settings[toggle_name] = 0
+settings[toggle_search] = 1
+settings[toggle_responsive] = 1
+settings[sidebar_first_width] = 3
+settings[sidebar_second_width] = 3
+settings[print_content] = 1
+settings[nav_style] = 0
+settings[collapse] = 1
+settings[container] = 0
+settings[row] = 0
+

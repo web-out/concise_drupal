@@ -1,0 +1,17 @@
+
+
+/* Larger than mobile 
+	@media (min-width: 400px) {}
+	@media (min-width: 550px) {}
+	@media (min-width: 750px) {}
+	@media (min-width: 1000px) {}
+	@media (min-width: 1200px) {}
+*/
+
+/* Mobile Queries 
+	@media (max-width: 468px) {}
+	@media (max-width: 768px) {}
+	@media (min-width: 640px) and (max-width: 768px) {}
+	@media (min-width: 768px) and (max-width: 980px) {}
+	@media (min-width: 980px) {}
+*/
