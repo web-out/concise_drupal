@@ -10,7 +10,7 @@
  * For taxonomy page, insert vocabulary id class.
  * Define the variable to activate responsive behaivor.
  */
-function jeet_drupal_preprocess_html(&$variables) {
+function concise_drupal_preprocess_html(&$variables) {
   //dpm($variables['skinr']);
   if (arg(0) == 'taxonomy') {
     $tid = arg(2);
@@ -25,7 +25,7 @@ function jeet_drupal_preprocess_html(&$variables) {
   }
   else {
     $variables['mobile_friendly'] = FALSE;
-  //  drupal_add_css(drupal_get_path('theme', 'jeet_drupal') . '/css/no-responsive.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
+  //  drupal_add_css(drupal_get_path('theme', 'concise_drupal') . '/css/no-responsive.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
   }
   
   $viewport = array(
@@ -45,7 +45,7 @@ function jeet_drupal_preprocess_html(&$variables) {
 * Implements theme_html_head_alter().
 * Removes the Generator tag from the head for Drupal 7
 */
-function jeet_drupal_html_head_alter(&$head_elements) {
+function concise_drupal_html_head_alter(&$head_elements) {
   /*D7 - Remove Meta Tag Generator*/
   if (module_exists('metatag')) {
     unset($head_elements['metatag_generator_0']);
@@ -60,8 +60,8 @@ function jeet_drupal_html_head_alter(&$head_elements) {
  *
  * Sets the widths of the main columns of the page.
  */
-function jeet_drupal_preprocess_page(&$variables) {
-  $variables['content_width'] = _jeet_drupal_content_width();
+function concise_drupal_preprocess_page(&$variables) {
+  $variables['content_width'] = _concise_drupal_content_width();
   $variables['sidebar_first_width'] = theme_get_setting('sidebar_first_width');
   $variables['sidebar_second_width'] = theme_get_setting('sidebar_second_width');
   _preprocess_menu($variables);
@@ -95,9 +95,9 @@ function jeet_drupal_preprocess_page(&$variables) {
  *
  * Calculates content width based on first and second column width parameters.
  */
-function _jeet_drupal_content_width() {
-  $sidebar_first_width = (_jeet_drupal_block_list('sidebar_first')) ? theme_get_setting('sidebar_first_width') : 0;
-  $sidebar_second_width = (_jeet_drupal_block_list('sidebar_second')) ? theme_get_setting('sidebar_second_width') : 0;
+function _concise_drupal_content_width() {
+  $sidebar_first_width = (_concise_drupal_block_list('sidebar_first')) ? theme_get_setting('sidebar_first_width') : 0;
+  $sidebar_second_width = (_concise_drupal_block_list('sidebar_second')) ? theme_get_setting('sidebar_second_width') : 0;
   $content_width = 12 - $sidebar_first_width - $sidebar_second_width;
   $content_width = $content_width;
   return $content_width;
@@ -110,7 +110,7 @@ function _jeet_drupal_content_width() {
  * assigned by the Context module.
  * Taken from Fusion Core.
  */
-function _jeet_drupal_block_list($region) {
+function _concise_drupal_block_list($region) {
   $drupal_list = array();
   if (module_exists('block')) {
     $drupal_list = block_list($region);
@@ -125,18 +125,18 @@ function _jeet_drupal_block_list($region) {
 /**
  * Implements hook_element_info_alter().
  */
-function jeet_drupal_element_info_alter(&$elements) {
+function concise_drupal_element_info_alter(&$elements) {
     // Element mail of module webform
     if (module_exists('webform')) {
         if (!empty($elements["webform_email"])) {
-              $elements["webform_email"]['#process'][] = '_jeet_drupal_process_input';
+              $elements["webform_email"]['#process'][] = '_concise_drupal_process_input';
         }
     }
 }
 /**
  * Add class form-control in fields
  */
-function _jeet_drupal_process_input(&$element, &$form_state) {
+function _concise_drupal_process_input(&$element, &$form_state) {
   // Only add the "form-control" class for specific element input types.
   $types = array(
     // Elements module.
@@ -169,7 +169,7 @@ function _preprocess_menu(&$variables) {
   }
 }
 
-function jeet_drupal_skinr_elements($variables, $hook, $op) {
+function concise_drupal_skinr_elements($variables, $hook, $op) {
 
  // dpm($variables);
   //dpm($hook);
@@ -181,7 +181,7 @@ function jeet_drupal_skinr_elements($variables, $hook, $op) {
   return $elements;*/
 }
 
-function jeet_drupal_skinr_preprocess_alter(&$skins, $context) {
+function concise_drupal_skinr_preprocess_alter(&$skins, $context) {
   /*dpm($skins);
  // $context['variables']['column'] = "";
   dpm($context);
@@ -189,7 +189,7 @@ function jeet_drupal_skinr_preprocess_alter(&$skins, $context) {
   
     foreach ($skins as $key => $skin) {
       if ($skin->module == 'block') {
-          if($skin->skin == "jeet_drupal_col-sm") {
+          if($skin->skin == "concise_drupal_col-sm") {
             $option_temp = $skin->options[0];
             $context['variables']['column'] = $option_temp;
           }
@@ -201,7 +201,7 @@ function jeet_drupal_skinr_preprocess_alter(&$skins, $context) {
 }
 
 
-function jeet_drupal_preprocess_skinr(&$variables, $hook) {
+function concise_drupal_preprocess_skinr(&$variables, $hook) {
   dpm($variables);
   dpm($hook);
 }
@@ -220,7 +220,7 @@ function yourtheme_preprocess_block(&$variables) {
  * Implements hook_preprocess_block()
  */
  
-function jeet_drupal_preprocess_block(&$variables) {
+function concise_drupal_preprocess_block(&$variables) {
 
     //dpm($variables);
   

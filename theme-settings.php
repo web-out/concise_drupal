@@ -7,13 +7,13 @@
 /**
  * Prameter definitions for Bootstrap Barrio.
  */
-function jeet_drupal_form_system_theme_settings_alter(&$form, $form_state, $form_id = NULL) {
+function concise_drupal_form_system_theme_settings_alter(&$form, $form_state, $form_id = NULL) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
   }
 
-  $form['jeet_drupal'] = array(
+  $form['concise_drupal'] = array(
     '#type' => 'vertical_tabs',
     '#prefix' => '<h2><small>' . t('Bootstrap Barrio Settings') . '</small></h2>',
     '#weight' => -10,
@@ -24,7 +24,7 @@ function jeet_drupal_form_system_theme_settings_alter(&$form, $form_state, $form
     '#type'          => 'fieldset',
     '#title'         => t('Title home'),
     '#description'   => t('Title home page'),
-    '#group' => 'jeet_drupal',
+    '#group' => 'concise_drupal',
   );
    $form['options']['home_title'] = array(
     '#type' => 'textfield',
@@ -35,7 +35,7 @@ function jeet_drupal_form_system_theme_settings_alter(&$form, $form_state, $form
     '#type'          => 'fieldset',
     '#title'         => t('Print content on front page'),
     '#description'   => t('Let you decide to print or not the content in the front page. This avoid the message no front content has been created and let handle front page information thru Blocks or Boxes.'),
-    '#group' => 'jeet_drupal',
+    '#group' => 'concise_drupal',
   );
 
   $form['front']['print_content'] = array(
@@ -49,7 +49,7 @@ function jeet_drupal_form_system_theme_settings_alter(&$form, $form_state, $form
     '#type'          => 'fieldset',
     '#title'         => t('Theme responsive settings'),
     '#description'   => t('Activates the Twitter Bootstrap responsive functions.'),
-    '#group' => 'jeet_drupal',
+    '#group' => 'concise_drupal',
   );
 
   $form['responsive']['toggle_responsive'] = array(
@@ -69,7 +69,7 @@ function jeet_drupal_form_system_theme_settings_alter(&$form, $form_state, $form
     '#type'          => 'fieldset',
     '#title'         => t('Column width settings'),
     '#description'   => t('Define the width of primary and secondary columns based on Twitter Bootstrap Span. The page is divided into 12 columns, main content width is automatically calculated.'),
-    '#group' => 'jeet_drupal',
+    '#group' => 'concise_drupal',
   );
   $form['span']['sidebar_first_width'] = array(
     '#type'          => 'select',
@@ -98,7 +98,7 @@ function jeet_drupal_form_system_theme_settings_alter(&$form, $form_state, $form
     '#type'          => 'fieldset',
     '#title'         => t('One Page'),
     '#description'   => t('Settings if decide to use the One Page.'),
-    '#group' => 'jeet_drupal',
+    '#group' => 'concise_drupal',
   );
   $form['one']['is_one'] = array(
     '#type'          => 'checkbox',

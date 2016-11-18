@@ -28,15 +28,15 @@
  * THEMENAME_PLUGINNAME_skinr_group_info(), or
  * MODULENAME_PLUGINNAME_skinr_group_info().
  */
-function jeet_drupal_skinr_group_info() {
-  $groups['jeet_drupal_links'] = array(
+function concise_drupal_skinr_group_info() {
+  $groups['concise_drupal_links'] = array(
     'title' => t('Links'),
     'description' => t('Choose one or more styles to apply to links and menus.'),
   );
   return $groups;
 }
 
-function jeet_drupal_skinr_group_columns_info() {
+function concise_drupal_skinr_group_columns_info() {
   $group['columns'] = array(
     'title' => t('Columns'), 
     'description' => t('Menu and navigation columns.'),
@@ -128,10 +128,10 @@ function jeet_drupal_skinr_group_columns_info() {
  * THEMENAME_PLUGINNAME_skinr_skin_info(), or
  * MODULENAME_PLUGINNAME_skinr_skin_info().
  */
-function jeet_drupal_skinr_skin_drupal_default_info() {
+function concise_drupal_skinr_skin_drupal_default_info() {
   $skins = array();
 
-  $skins['jeet_drupal_col'] = array(
+  $skins['concise_drupal_col'] = array(
     'title' => t('Drupal Column '),
     'description' => t('Define the value for Bootstrap Columns small screen devices.'),
     'type' => 'select',
@@ -190,7 +190,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     ),
   );
 
-  $skins['jeet_drupal_col_offsets'] = array(
+  $skins['concise_drupal_col_offsets'] = array(
     'title' => t('Drupal Column OFFSETS'),
     'description' => t('There are cases where you need to move a column to the right side without creating an empty column next to it. For this, you can use column offsets, which are pretty simple to use.'),
     'type' => 'select',
@@ -248,7 +248,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
       ),
     ),
   );
- /* $skins['jeet_drupal_col-md'] = array(
+ /* $skins['concise_drupal_col-md'] = array(
     'title' => t('Bootstrap Column Medium'),
     'description' => t('Define the value for Bootstrap Columns medium screen devices.'),
     'type' => 'select',
@@ -306,7 +306,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
       ),
     ),
   );
-  $skins['jeet_drupal_col-lg'] = array(
+  $skins['concise_drupal_col-lg'] = array(
     'title' => t('Bootstrap Column Large'),
     'description' => t('Define the value for Bootstrap Columns large screen devices.'),
     'type' => 'select',
@@ -365,7 +365,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     ),
   );
 
-  $skins['jeet_drupal_offset'] = array(
+  $skins['concise_drupal_offset'] = array(
     'title' => t('Bootstrap Column Small'),
     'description' => t('Define the OFFSET value for Bootstrap Columns Small.'),
     'type' => 'select',
@@ -419,7 +419,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
       ),
     ),
   );
-  $skins['jeet_drupal_col-md-offset'] = array(
+  $skins['concise_drupal_col-md-offset'] = array(
     'title' => t('Bootstrap Column Medium'),
     'description' => t('Define the OFFSET value for Bootstrap Columns Medium.'),
     'type' => 'select',
@@ -473,7 +473,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
       ),
     ),
   );
-  $skins['jeet_drupal_col-lg-offset'] = array(
+  $skins['concise_drupal_col-lg-offset'] = array(
     'title' => t('Bootstrap Column Large'),
     'description' => t('Define the OFFSET value for Bootstrap Columns Large.'),
     'type' => 'select',
@@ -528,7 +528,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     ),
   );*/
 
-  $skins['jeet_drupal_row'] = array(
+  $skins['concise_drupal_row'] = array(
     'title' => t('Bootstrap Row'),
     'type' => 'select',
     'description' => t('Define a DIV as row.'),
@@ -543,7 +543,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     ),
   );
 
-  $skins['jeet_drupal_container'] = array(
+  $skins['concise_drupal_container'] = array(
     'title' => t('Bootstrap Container'),
     'type' => 'select',
     'description' => t('Define a DIV as container.'),
@@ -558,7 +558,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     ),
   );
 
-  $skins['jeet_drupal_position'] = array(
+  $skins['concise_drupal_position'] = array(
     'title' => t('Position Container'),
     'type' => 'select',
     'description' => t('Define a DIV as Position.'),
@@ -586,7 +586,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
   );
 
 
-  $skins['jeet_drupal_responsive_utility'] = array(
+  $skins['concise_drupal_responsive_utility'] = array(
     'title' => t('Hide/Show'),
     'type' => 'select',
     'description' => t('You can hide or show elements depending on certain key points, like the device size, resolution, or media (printing or screen).'),
@@ -653,7 +653,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     ),
   );
 
-  $skins['jeet_drupal_modal'] = array(
+  $skins['concise_drupal_modal'] = array(
     'title' => t('Modal Block'),
     'type' => 'checkboxes',
     'description' => t('Define a block as Modal. Replace block by button with block title as text.'),
@@ -662,14 +662,14 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     'group' => 'box',
     'default status' => 1,
     'options' => array(
-      'jeet_drupal_modal' => array(
+      'concise_drupal_modal' => array(
         'title' => t('Set as modal.'),
         'class' => array('modal', 'fade', 'drupal-modal'),
       ),
     ),
   );
 
-  $skins['jeet_drupal_dropdown'] = array(
+  $skins['concise_drupal_dropdown'] = array(
     'title' => t('Dropdown Block'),
     'type' => 'checkboxes',
     'description' => t('Define a block as Dropdown. Replace block by button with block title as text.'),
@@ -678,14 +678,14 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     'group' => 'box',
     'default status' => 1,
     'options' => array(
-      'jeet_drupal_dropdown' => array(
+      'concise_drupal_dropdown' => array(
         'title' => t('Set as dropdown.'),
         'class' => array('dropdown', 'drupal-dropdown'),
       ),
     ),
   );
 
-  $skins['jeet_drupal_navbar'] = array(
+  $skins['concise_drupal_navbar'] = array(
     'title' => t('Navigation Bar'),
     'type' => 'checkboxes',
     'description' => t('Define Navigation Bar characteristics.'),
@@ -708,7 +708,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     ),
   );
 
-  /*$skins['jeet_drupal_collapse'] = array(
+  /*$skins['concise_drupal_collapse'] = array(
     'title' => t('Collapsible responsive menu'),
     'type' => 'checkboxes',
     'description' => t('Define a menu as responsive collapsible. Needs to define navbar toggle button, .btn-navbar.'),
@@ -716,7 +716,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     'group' => 'box',
     'default status' => 1,
     'options' => array(
-      'jeet_drupal_collapse_menu' => array(
+      'concise_drupal_collapse_menu' => array(
         'title' => t('Set as collapsible.'),
         'class' => array('nav-collapse'),
       ),
