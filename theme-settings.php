@@ -76,9 +76,9 @@ function jeet_drupal_form_system_theme_settings_alter(&$form, $form_state, $form
     '#title'         => t('First column width'),
     '#default_value' => theme_get_setting('sidebar_first_width'),
     '#options' => array(
-      2 => t('col-2'),
-      3 => t('col-3'),
-      4 => t('col-4'),
+      2 => t('Column 2'),
+      3 => t('Column 3'),
+      4 => t('Column 4'),
     ),
     '#description'   => t('Define the width of the first column based on column grid system'),
   );
@@ -87,9 +87,9 @@ function jeet_drupal_form_system_theme_settings_alter(&$form, $form_state, $form
     '#title'         => t('Second column width'),
     '#default_value' => theme_get_setting('sidebar_second_width'),
     '#options' => array(
-      2 => t('col-2'),
-      3 => t('col-3'),
-      4 => t('col-4'),
+      2 => t('Column 2'),
+      3 => t('Column 3'),
+      4 => t('Column 4')
     ),
     '#description'   => t('Define the width of the second column based on column grid system'),
   );

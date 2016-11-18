@@ -36,6 +36,13 @@ function jeet_drupal_skinr_group_info() {
   return $groups;
 }
 
+function jeet_drupal_skinr_group_columns_info() {
+  $group['columns'] = array(
+    'title' => t('Columns'), 
+    'description' => t('Menu and navigation columns.'),
+  );
+  return $groups;
+}
 /**
  * Implements hook_skinr_skin_info().
  *
@@ -124,65 +131,124 @@ function jeet_drupal_skinr_group_info() {
 function jeet_drupal_skinr_skin_drupal_default_info() {
   $skins = array();
 
-  $skins['jeet_drupal_col-sm'] = array(
-    'title' => t('Bootstrap Column Small'),
+  $skins['jeet_drupal_col'] = array(
+    'title' => t('Drupal Column '),
     'description' => t('Define the value for Bootstrap Columns small screen devices.'),
     'type' => 'select',
-    'theme hooks' => array('block','region'),
+    'theme hooks' => array('block'),
     'group' => 'layout',
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Span 1'),
-        'class' => array('col-sm-1'),
+        'title' => t('Column 1'),
+        'class' => array('column-1'),
       ),
       'option_2' => array(
-        'title' => t('Span 2'),
-        'class' => array('col-sm-2'),
+        'title' => t('Column 2'),
+        'class' => array('column-2'),
       ),
       'option_3' => array(
-        'title' => t('Span 3'),
-        'class' => array('col-sm-3'),
+        'title' => t('Column 3'),
+        'class' => array('column-3'),
       ),
       'option_4' => array(
-        'title' => t('Span 4'),
-        'class' => array('col-sm-4'),
+        'title' => t('Column 4'),
+        'class' => array('column-4'),
       ),
       'option_5' => array(
-        'title' => t('Span 5'),
-        'class' => array('col-sm-5'),
+        'title' => t('Column 5'),
+        'class' => array('column-5'),
       ),
       'option_6' => array(
-        'title' => t('Span 6'),
-        'class' => array('col-sm-6'),
+        'title' => t('Column 6'),
+        'class' => array('column-6'),
       ),
       'option_7' => array(
-        'title' => t('Span 7'),
-        'class' => array('col-sm-7'),
+        'title' => t('Column 7'),
+        'class' => array('column-7'),
       ),
       'option_8' => array(
-        'title' => t('Span 8'),
-        'class' => array('col-sm-8'),
+        'title' => t('Column 8'),
+        'class' => array('column-8'),
       ),
       'option_9' => array(
-        'title' => t('Span 9'),
-        'class' => array('col-sm-9'),
+        'title' => t('Column 9'),
+        'class' => array('column-9'),
       ),
       'option_10' => array(
-        'title' => t('Span 10'),
-        'class' => array('col-sm-10'),
+        'title' => t('Column 10'),
+        'class' => array('column-10'),
       ),
       'option_11' => array(
-        'title' => t('Span 11'),
-        'class' => array('col-sm-11'),
+        'title' => t('Column 11'),
+        'class' => array('column-11'),
       ),
       'option_12' => array(
-        'title' => t('Span 12'),
-        'class' => array('col-sm-12'),
+        'title' => t('Column 12'),
+        'class' => array('column-12'),
       ),
     ),
   );
-  $skins['jeet_drupal_col-md'] = array(
+
+  $skins['jeet_drupal_col_offsets'] = array(
+    'title' => t('Drupal Column OFFSETS'),
+    'description' => t('There are cases where you need to move a column to the right side without creating an empty column next to it. For this, you can use column offsets, which are pretty simple to use.'),
+    'type' => 'select',
+    'theme hooks' => array('block'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('+1'),
+        'class' => array('offset-1'),
+      ),
+      'option_2' => array(
+        'title' => t('+2'),
+        'class' => array('offset-2'),
+      ),
+      'option_3' => array(
+        'title' => t('+3'),
+        'class' => array('offset-3'),
+      ),
+      'option_4' => array(
+        'title' => t('+4'),
+        'class' => array('offset-4'),
+      ),
+      'option_5' => array(
+        'title' => t('+5'),
+        'class' => array('offset-5'),
+      ),
+      'option_6' => array(
+        'title' => t('+6'),
+        'class' => array('offset-6'),
+      ),
+      'option_7' => array(
+        'title' => t('+7'),
+        'class' => array('offset-7'),
+      ),
+      'option_8' => array(
+        'title' => t('+8'),
+        'class' => array('offset-8'),
+      ),
+      'option_9' => array(
+        'title' => t('+9'),
+        'class' => array('offset-9'),
+      ),
+      'option_10' => array(
+        'title' => t('+10'),
+        'class' => array('offset-10'),
+      ),
+      'option_11' => array(
+        'title' => t('+11'),
+        'class' => array('offset-11'),
+      ),
+      'option_12' => array(
+        'title' => t('+12'),
+        'class' => array('offset-12'),
+      ),
+    ),
+  );
+ /* $skins['jeet_drupal_col-md'] = array(
     'title' => t('Bootstrap Column Medium'),
     'description' => t('Define the value for Bootstrap Columns medium screen devices.'),
     'type' => 'select',
@@ -191,51 +257,51 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Span 1'),
+        'title' => t('Column 1'),
         'class' => array('col-md-1'),
       ),
       'option_2' => array(
-        'title' => t('Span 2'),
+        'title' => t('Column 2'),
         'class' => array('col-md-2'),
       ),
       'option_3' => array(
-        'title' => t('Span 3'),
+        'title' => t('Column 3'),
         'class' => array('col-md-3'),
       ),
       'option_4' => array(
-        'title' => t('Span 4'),
+        'title' => t('Column 4'),
         'class' => array('col-md-4'),
       ),
       'option_5' => array(
-        'title' => t('Span 5'),
+        'title' => t('Column 5'),
         'class' => array('col-md-5'),
       ),
       'option_6' => array(
-        'title' => t('Span 6'),
+        'title' => t('Column 6'),
         'class' => array('col-md-6'),
       ),
       'option_7' => array(
-        'title' => t('Span 7'),
+        'title' => t('Column 7'),
         'class' => array('col-md-7'),
       ),
       'option_8' => array(
-        'title' => t('Span 8'),
+        'title' => t('Column 8'),
         'class' => array('col-md-8'),
       ),
       'option_9' => array(
-        'title' => t('Span 9'),
+        'title' => t('Column 9'),
         'class' => array('col-md-9'),
       ),
       'option_10' => array(
-        'title' => t('Span 10'),
+        'title' => t('Column 10'),
         'class' => array('col-md-10'),
       ),
       'option_11' => array(
-        'title' => t('Span 11'),
+        'title' => t('Column 11'),
         'class' => array('col-md-11'),
       ),
       'option_12' => array(
-        'title' => t('Span 12'),
+        'title' => t('Column 12'),
         'class' => array('col-md-12'),
       ),
     ),
@@ -249,58 +315,58 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Span 1'),
+        'title' => t('Column 1'),
         'class' => array('col-lg-1'),
       ),
       'option_2' => array(
-        'title' => t('Span 2'),
+        'title' => t('Column 2'),
         'class' => array('col-lg-2'),
       ),
       'option_3' => array(
-        'title' => t('Span 3'),
+        'title' => t('Column 3'),
         'class' => array('col-lg-3'),
       ),
       'option_4' => array(
-        'title' => t('Span 4'),
+        'title' => t('Column 4'),
         'class' => array('col-lg-4'),
       ),
       'option_5' => array(
-        'title' => t('Span 5'),
+        'title' => t('Column 5'),
         'class' => array('col-lg-5'),
       ),
       'option_6' => array(
-        'title' => t('Span 6'),
+        'title' => t('Column 6'),
         'class' => array('col-lg-6'),
       ),
       'option_7' => array(
-        'title' => t('Span 7'),
+        'title' => t('Column 7'),
         'class' => array('col-lg-7'),
       ),
       'option_8' => array(
-        'title' => t('Span 8'),
+        'title' => t('Column 8'),
         'class' => array('col-lg-8'),
       ),
       'option_9' => array(
-        'title' => t('Span 9'),
+        'title' => t('Column 9'),
         'class' => array('col-lg-9'),
       ),
       'option_10' => array(
-        'title' => t('Span 10'),
+        'title' => t('Column 10'),
         'class' => array('col-lg-10'),
       ),
       'option_11' => array(
-        'title' => t('Span 11'),
+        'title' => t('Column 11'),
         'class' => array('col-lg-11'),
       ),
       'option_12' => array(
-        'title' => t('Span 12'),
+        'title' => t('Column 12'),
         'class' => array('col-lg-12'),
       ),
     ),
   );
 
-  $skins['jeet_drupal_col-sm-offset'] = array(
-    'title' => t('Bootstrap Column Offset Small'),
+  $skins['jeet_drupal_offset'] = array(
+    'title' => t('Bootstrap Column Small'),
     'description' => t('Define the OFFSET value for Bootstrap Columns Small.'),
     'type' => 'select',
     'theme hooks' => array('block','region'),
@@ -308,53 +374,53 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Offset 1'),
-        'class' => array('col-sm-offset-1'),
+        'title' => t('1'),
+        'class' => array('offset-1'),
       ),
       'option_2' => array(
-        'title' => t('Offset 2'),
-        'class' => array('col-sm-offset-2'),
+        'title' => t('2'),
+        'class' => array('offset-2'),
       ),
       'option_3' => array(
-        'title' => t('Offset 3'),
-        'class' => array('col-sm-offset-3'),
+        'title' => t('3'),
+        'class' => array('offset-3'),
       ),
       'option_4' => array(
-        'title' => t('Offset 4'),
-        'class' => array('col-sm-offset-4'),
+        'title' => t('4'),
+        'class' => array('offset-4'),
       ),
       'option_5' => array(
-        'title' => t('Offset 5'),
-        'class' => array('col-sm-offset-5'),
+        'title' => t('5'),
+        'class' => array('offset-5'),
       ),
       'option_6' => array(
-        'title' => t('Offset 6'),
-        'class' => array('col-sm-offset-6'),
+        'title' => t('6'),
+        'class' => array('offset-6'),
       ),
       'option_7' => array(
-        'title' => t('Offset 7'),
-        'class' => array('col-sm-offset-'),
+        'title' => t('7'),
+        'class' => array('offset-'),
       ),
       'option_8' => array(
-        'title' => t('Offset 8'),
-        'class' => array('col-sm-offset-8'),
+        'title' => t('8'),
+        'class' => array('offset-8'),
       ),
       'option_9' => array(
-        'title' => t('Offset 9'),
-        'class' => array('col-sm-offset-9'),
+        'title' => t('9'),
+        'class' => array('offset-9'),
       ),
       'option_10' => array(
-        'title' => t('Offset 10'),
-        'class' => array('col-sm-offset-10'),
+        'title' => t('10'),
+        'class' => array('offset-10'),
       ),
       'option_11' => array(
-        'title' => t('Offset 11'),
-        'class' => array('col-sm-offset-11'),
+        'title' => t('11'),
+        'class' => array('offset-11'),
       ),
     ),
   );
   $skins['jeet_drupal_col-md-offset'] = array(
-    'title' => t('Bootstrap Column Offset Medium'),
+    'title' => t('Bootstrap Column Medium'),
     'description' => t('Define the OFFSET value for Bootstrap Columns Medium.'),
     'type' => 'select',
     'theme hooks' => array('block','region'),
@@ -362,53 +428,53 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Offset 1'),
+        'title' => t('1'),
         'class' => array('col-md-offset-1'),
       ),
       'option_2' => array(
-        'title' => t('Offset 2'),
+        'title' => t('2'),
         'class' => array('col-md-offset-2'),
       ),
       'option_3' => array(
-        'title' => t('Offset 3'),
+        'title' => t('3'),
         'class' => array('col-md-offset-3'),
       ),
       'option_4' => array(
-        'title' => t('Offset 4'),
+        'title' => t('4'),
         'class' => array('col-md-offset-4'),
       ),
       'option_5' => array(
-        'title' => t('Offset 5'),
+        'title' => t('5'),
         'class' => array('col-md-offset-5'),
       ),
       'option_6' => array(
-        'title' => t('Offset 6'),
+        'title' => t('6'),
         'class' => array('col-md-offset-6'),
       ),
       'option_7' => array(
-        'title' => t('Offset 7'),
+        'title' => t('7'),
         'class' => array('col-md-offset-'),
       ),
       'option_8' => array(
-        'title' => t('Offset 8'),
+        'title' => t('8'),
         'class' => array('col-md-offset-8'),
       ),
       'option_9' => array(
-        'title' => t('Offset 9'),
+        'title' => t('9'),
         'class' => array('col-md-offset-9'),
       ),
       'option_10' => array(
-        'title' => t('Offset 10'),
+        'title' => t('10'),
         'class' => array('col-md-offset-10'),
       ),
       'option_11' => array(
-        'title' => t('Offset 11'),
+        'title' => t('11'),
         'class' => array('col-md-offset-11'),
       ),
     ),
   );
   $skins['jeet_drupal_col-lg-offset'] = array(
-    'title' => t('Bootstrap Column Offset Large'),
+    'title' => t('Bootstrap Column Large'),
     'description' => t('Define the OFFSET value for Bootstrap Columns Large.'),
     'type' => 'select',
     'theme hooks' => array('block','region'),
@@ -416,51 +482,51 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Offset 1'),
+        'title' => t('1'),
         'class' => array('col-lg-offset-1'),
       ),
       'option_2' => array(
-        'title' => t('Offset 2'),
+        'title' => t('2'),
         'class' => array('col-lg-offset-2'),
       ),
       'option_3' => array(
-        'title' => t('Offset 3'),
+        'title' => t('3'),
         'class' => array('col-lg-offset-3'),
       ),
       'option_4' => array(
-        'title' => t('Offset 4'),
+        'title' => t('4'),
         'class' => array('col-lg-offset-4'),
       ),
       'option_5' => array(
-        'title' => t('Offset 5'),
+        'title' => t('5'),
         'class' => array('col-lg-offset-5'),
       ),
       'option_6' => array(
-        'title' => t('Offset 6'),
+        'title' => t('6'),
         'class' => array('col-lg-offset-6'),
       ),
       'option_7' => array(
-        'title' => t('Offset 7'),
+        'title' => t('7'),
         'class' => array('col-lg-offset-'),
       ),
       'option_8' => array(
-        'title' => t('Offset 8'),
+        'title' => t('8'),
         'class' => array('col-lg-offset-8'),
       ),
       'option_9' => array(
-        'title' => t('Offset 9'),
+        'title' => t('9'),
         'class' => array('col-lg-offset-9'),
       ),
       'option_10' => array(
-        'title' => t('Offset 10'),
+        'title' => t('10'),
         'class' => array('col-lg-offset-10'),
       ),
       'option_11' => array(
-        'title' => t('Offset 11'),
+        'title' => t('11'),
         'class' => array('col-lg-offset-11'),
       ),
     ),
-  );
+  );*/
 
   $skins['jeet_drupal_row'] = array(
     'title' => t('Bootstrap Row'),
@@ -492,45 +558,97 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     ),
   );
 
-  $skins['jeet_drupal_responsive_utility'] = array(
-    'title' => t('Bootstrap Responsive Utility Classes'),
+  $skins['jeet_drupal_position'] = array(
+    'title' => t('Position Container'),
     'type' => 'select',
-    'description' => t('Definitions for responsive classes to show hide blocks or regions.'),
+    'description' => t('Define a DIV as Position.'),
+    'theme hooks' => array('block', 'region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Position absolute'),
+        'class' => array('--abs'),
+      ),
+      'option_2' => array(
+        'title' => t('Position relative'),
+        'class' => array('--rel'),
+      ),
+      'option_3' => array(
+        'title' => t('Position static'),
+        'class' => array('--sta'),
+      ),
+      'option_4' => array(
+        'title' => t('Position fixed'),
+        'class' => array('--fix'),
+      ),
+    ),
+  );
+
+
+  $skins['jeet_drupal_responsive_utility'] = array(
+    'title' => t('Hide/Show'),
+    'type' => 'select',
+    'description' => t('You can hide or show elements depending on certain key points, like the device size, resolution, or media (printing or screen).'),
     'theme hooks' => array('block', 'region', 'node'),
     'group' => 'layout',
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Visible Phone'),
-        'class' => array('visible-xs'),
+        'title' => t('Visible Phone xs'),
+        'class' => array('--show-xs'),
       ),
       'option_2' => array(
         'title' => t('Visible Tablet'),
-        'class' => array('visible-sm'),
+        'class' => array('show-s'),
       ),
       'option_3' => array(
         'title' => t('Visible Desktop'),
-        'class' => array('visible-md'),
+        'class' => array('--show-m'),
       ),
       'option_4' => array(
         'title' => t('Visible Large Screen'),
-        'class' => array('visible-lg'),
+        'class' => array('--show-l'),
       ),
       'option_5' => array(
-        'title' => t('Hidden Phone'),
-        'class' => array('hidden-xs'),
+        'title' => t('Visible Extra Large'),
+        'class' => array('--show-xl'),
       ),
       'option_6' => array(
-        'title' => t('Hidden Tablet'),
-        'class' => array('hidden-sm'),
+        'title' => t('Visible only on high density (retina) device'),
+        'class' => array('--show-hd'),
       ),
       'option_7' => array(
-        'title' => t('Hidden Desktop'),
-        'class' => array('hidden-md'),
+        'title' => t('Hidden Phone'),
+        'class' => array('--hide-xs'),
       ),
       'option_8' => array(
+        'title' => t('Hidden Tablet'),
+        'class' => array('--hide-s'),
+      ),
+      'option_9' => array(
+        'title' => t('Hidden Desktop'),
+        'class' => array('--hide-m'),
+      ),
+      'option_10' => array(
         'title' => t('Hidden Large Screen'),
-        'class' => array('hidden-lg'),
+        'class' => array('--hide-l'),
+      ),
+      'option_11' => array(
+        'title' => t('Hidden Extra Large'),
+        'class' => array('--hide-xl'),
+      ),
+      'option_12' => array(
+        'title' => t('Hidden only on high density (retina) device'),
+        'class' => array('--hide-hd'),
+      ),
+      'option_13' => array(
+        'title' => t('Show only on print'),
+        'class' => array('--show-print'),
+      ),
+      'option_14' => array(
+        'title' => t('Hidden only on print'),
+        'class' => array('--hide-print'),
       ),
     ),
   );
@@ -539,7 +657,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     'title' => t('Modal Block'),
     'type' => 'checkboxes',
     'description' => t('Define a block as Modal. Replace block by button with block title as text.'),
-    'js' => array('drupal_default.js'),
+    //'js' => array('drupal_default.js'),
     'theme hooks' => array('block'),
     'group' => 'box',
     'default status' => 1,
@@ -590,7 +708,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
     ),
   );
 
-  $skins['jeet_drupal_collapse'] = array(
+  /*$skins['jeet_drupal_collapse'] = array(
     'title' => t('Collapsible responsive menu'),
     'type' => 'checkboxes',
     'description' => t('Define a menu as responsive collapsible. Needs to define navbar toggle button, .btn-navbar.'),
@@ -603,7 +721,7 @@ function jeet_drupal_skinr_skin_drupal_default_info() {
         'class' => array('nav-collapse'),
       ),
     ),
-  );
+  );*/
 
   return $skins;
 }

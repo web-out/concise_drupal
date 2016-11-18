@@ -1,0 +1,96 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "concise-utils",
+        "scope": null,
+        "escapedName": "concise-utils",
+        "name": "concise-utils",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "E:\\Trabajos\\SASSS\\concise"
+    ]
+  ],
+  "_from": "concise-utils@latest",
+  "_id": "concise-utils@1.0.0",
+  "_inCache": true,
+  "_location": "/concise-utils",
+  "_nodeVersion": "6.8.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/concise-utils-1.0.0.tgz_1479097889591_0.3685545278713107"
+  },
+  "_npmUser": {
+    "name": "jameskolce",
+    "email": "contact@jameskolce.com"
+  },
+  "_npmVersion": "3.10.9",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "concise-utils",
+    "scope": null,
+    "escapedName": "concise-utils",
+    "name": "concise-utils",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/concise-utils/-/concise-utils-1.0.0.tgz",
+  "_shasum": "797b6e196ca7e87de7e628d23fa8891abe5ae95c",
+  "_shrinkwrap": null,
+  "_spec": "concise-utils",
+  "_where": "E:\\Trabajos\\SASSS\\concise",
+  "bugs": {
+    "url": "https://github.com/ConciseCSS/concise-utils/issues"
+  },
+  "dependencies": {},
+  "description": "Utility classes for Concise CSS",
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "concise-cli": "^0.4.1",
+    "concise.css": "github:concisecss/concise.css#master",
+    "cssnano-cli": "^1.0.4",
+    "stylestats": "^6.3.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "797b6e196ca7e87de7e628d23fa8891abe5ae95c",
+    "tarball": "https://registry.npmjs.org/concise-utils/-/concise-utils-1.0.0.tgz"
+  },
+  "gitHead": "2d95a7b5a26358e0123f462c465ff771cf3fe074",
+  "homepage": "https://github.com/ConciseCSS/concise-utils#readme",
+  "keywords": [
+    "css",
+    "concise",
+    "sass",
+    "framework",
+    "add-on",
+    "utils",
+    "postcss"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "jameskolce",
+      "email": "contact@jameskolce.com"
+    }
+  ],
+  "name": "concise-utils",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ConciseCSS/concise-utils.git"
+  },
+  "scripts": {
+    "build": "concisecss compile dist.scss dist/concise-utils.css && cssnano dist/concise-utils.css dist/concise-utils.min.css",
+    "build:watch": "npm run build && chokidar '**/*.scss' -c 'npm run build'",
+    "stats": "stylestats dist/concise-utils.css"
+  },
+  "version": "1.0.0"
+}

@@ -5,68 +5,59 @@
  * Override of Bootstrap page.tpl.php.
  */
 ?>
-<?php if (!empty($secondary_nav) || !empty($page['top'])): ?>
-<header role="banner">
-  <div id="top" class="container">
-    <?php print render($secondary_nav); ?>
-    <?php print render($page['top']); ?>
-  </div>
-</header>
-<?php endif; ?>
-<header id="navbar" class="<?php print $navbar_classes; ?>" role="banner">
+<header id="navbar" role="banner" container>
   <div class="container">
       <div class="navbar-inner">
          <div id="main-navs">
            <div class="container">
-           <div class="navbar-header">
-            <?php if (!empty($logo)): ?>
-              <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-                <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-              </a>
-            <?php endif; ?>
-
-            <?php if (!empty($site_name)): ?>
-              <h1 id="site-name">
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="brand"><?php print $site_name; ?></a>
-              </h1>
-            <?php endif; ?>
-            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-           </div>
-           <div id="header" class="header">
-             <div>
-              <?php print render($page['header']); ?>
-              <?php if (!empty($primary_nav) || !empty($page['navigation'])): ?>
-                <div id="main-nav" class="<?php print $collapse; ?>">
-                  <nav role="navigation">
-                    <?php if (!empty($primary_nav)): ?>
-                      <?php print render($primary_nav); ?>
-                    <?php endif; ?>
-                    <?php if (!empty($page['navigation'])): ?>
-                      <?php print render($page['navigation']); ?>
-                    <?php endif; ?>
-                  </nav>
-                </div>
+             <div class="navbar-header">
+              <?php if (!empty($logo)): ?>
+                <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+                  <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+                </a>
               <?php endif; ?>
+
+              <?php if (!empty($site_name)): ?>
+                <h1 id="site-name">
+                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="brand"><?php print $site_name; ?></a>
+                </h1>
+              <?php endif; ?>
+              <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+             </div>
+             <div id="header" class="header">
+               <div>
+                <?php print render($page['header']); ?>
+                <?php if (!empty($primary_nav) || !empty($page['navigation'])): ?>
+                  <div id="main-nav" class="<?php print $collapse; ?>">
+                    <nav role="navigation">
+                      <?php if (!empty($primary_nav)): ?>
+                        <?php print render($primary_nav); ?>
+                      <?php endif; ?>
+                      <?php if (!empty($page['navigation'])): ?>
+                        <?php print render($page['navigation']); ?>
+                      <?php endif; ?>
+                    </nav>
+                  </div>
+                <?php endif; ?>
+              </div>
             </div>
           </div>
-        </div></div>
+        </div>
       </div>
     </div>
 </header>
 
 <?php if (!empty($page['slider'])): ?>
-  <section id="slideshow_container">
-    <?php print render($page['slider']); ?>
+  <section id="slider">
+        <?php print render($page['slider']); ?>
   </section>
 <?php endif; ?>
 
-<section class="main-container">
+<section>
+  
+</section>
+
+<section class="main-container" container>
  <div class="container">
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
@@ -83,12 +74,12 @@
     <?php endif; ?>  
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="<?php print $sidebar_first_width; ?>" role="complementary">
+      <aside column="<?php print $sidebar_first_width; ?>" role="complementary">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>  
 
-    <section class="<?php print $content_width; ?> col-xs-12">
+    <section column="<?php print $content_width; ?>" container>
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted hero-unit"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
@@ -138,7 +129,7 @@
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="<?php print $sidebar_second_width; ?> col-xs-12" role="complementary">
+      <aside column="<?php print $sidebar_second_width; ?>" role="complementary">
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
@@ -162,11 +153,12 @@
  </div>
 </section>
 
-<footer class="footer">
+
+<footer class="footer" container>
     <div id="footer-inner" class="container">
     <?php print render($page['footer']); ?>
     </div>
 </footer>
-<section id="development">
+<section id="development" container>
    <div class="container"> <?php print render($page['footer_development']); ?></div>
 </section>
