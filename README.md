@@ -1,4 +1,4 @@
-# [<img src="http://simpleicon.com/wp-content/uploads/drupal.png">](http://drupal.org/)
+# [<img width="159" src="http://simpleicon.com/wp-content/uploads/drupal.png">](http://drupal.org/)
 # [<img src="http://i.imgur.com/ihzCgEr.png">](http://concisecss.com/)
 
 

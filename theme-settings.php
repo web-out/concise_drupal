@@ -5,7 +5,7 @@
  */
 
 /**
- * Prameter definitions for Bootstrap Barrio.
+ * Prameter definitions for Concise drupal.
  */
 function concise_drupal_form_system_theme_settings_alter(&$form, $form_state, $form_id = NULL) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
@@ -15,7 +15,7 @@ function concise_drupal_form_system_theme_settings_alter(&$form, $form_state, $f
 
   $form['concise_drupal'] = array(
     '#type' => 'vertical_tabs',
-    '#prefix' => '<h2><small>' . t('Bootstrap Barrio Settings') . '</small></h2>',
+    '#prefix' => '<h2><small>' . t('Concise drupal Settings') . '</small></h2>',
     '#weight' => -10,
   );
 

@@ -121,7 +121,7 @@
  * THEMENAME_PLUGINNAME_skinr_skin_info(), or
  * MODULENAME_PLUGINNAME_skinr_skin_info().
  */
-function concise_drupal_skinr_skin_drupal_default_info() {
+function concise_drupal_skinr_skin_concise_default_info() {
   $skins = array();
 
   $skins['concise_drupal-col'] = array(
@@ -340,7 +340,7 @@ function concise_drupal_skinr_skin_drupal_default_info() {
     'title' => t('Modal Block'),
     'type' => 'checkboxes',
     'description' => t('Define a block as Modal. Replace block by button with block title as text.'),
-    //'js' => array('drupal_default.js'),
+    //'js' => array('concise_default.js'),
     'theme hooks' => array('block'),
     'group' => 'box',
     'default status' => 1,
@@ -356,7 +356,7 @@ function concise_drupal_skinr_skin_drupal_default_info() {
     'title' => t('Dropdown Block'),
     'type' => 'checkboxes',
     'description' => t('Define a block as Dropdown. Replace block by button with block title as text.'),
-    'js' => array('drupal_default.js'),
+    'js' => array('concise_default.js'),
     'theme hooks' => array('block'),
     'group' => 'box',
     'default status' => 1,

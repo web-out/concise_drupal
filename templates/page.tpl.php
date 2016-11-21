@@ -2,7 +2,6 @@
 
 /**
  * @file
- * Override of Bootstrap page.tpl.php.
  */
 ?>
 <header id="navbar" role="banner" container>

@@ -2,7 +2,6 @@
 
 /**
  * @file
- * Override of Bootstrap html.tpl.php.
  */
 ?>
 <!DOCTYPE html>
