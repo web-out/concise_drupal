@@ -28,21 +28,14 @@
  * THEMENAME_PLUGINNAME_skinr_group_info(), or
  * MODULENAME_PLUGINNAME_skinr_group_info().
  */
-function concise_drupal_skinr_group_info() {
-  $groups['concise_drupal_links'] = array(
+/*function concise_drupal_skinr_group_info() {
+  $groups['concise_drupal-links'] = array(
     'title' => t('Links'),
     'description' => t('Choose one or more styles to apply to links and menus.'),
   );
   return $groups;
-}
+}*/
 
-function concise_drupal_skinr_group_columns_info() {
-  $group['columns'] = array(
-    'title' => t('Columns'), 
-    'description' => t('Menu and navigation columns.'),
-  );
-  return $groups;
-}
 /**
  * Implements hook_skinr_skin_info().
  *
@@ -131,11 +124,11 @@ function concise_drupal_skinr_group_columns_info() {
 function concise_drupal_skinr_skin_drupal_default_info() {
   $skins = array();
 
-  $skins['concise_drupal_col'] = array(
+  $skins['concise_drupal-col'] = array(
     'title' => t('Drupal Column '),
     'description' => t('Define the value for Bootstrap Columns small screen devices.'),
     'type' => 'select',
-    'theme hooks' => array('block'),
+    'theme hooks' => array('block', 'region'),
     'group' => 'layout',
     'default status' => 1,
     'options' => array(
@@ -190,7 +183,7 @@ function concise_drupal_skinr_skin_drupal_default_info() {
     ),
   );
 
-  $skins['concise_drupal_col_offsets'] = array(
+  $skins['concise_drupal-col_offsets'] = array(
     'title' => t('Drupal Column OFFSETS'),
     'description' => t('There are cases where you need to move a column to the right side without creating an empty column next to it. For this, you can use column offsets, which are pretty simple to use.'),
     'type' => 'select',
@@ -248,317 +241,7 @@ function concise_drupal_skinr_skin_drupal_default_info() {
       ),
     ),
   );
- /* $skins['concise_drupal_col-md'] = array(
-    'title' => t('Bootstrap Column Medium'),
-    'description' => t('Define the value for Bootstrap Columns medium screen devices.'),
-    'type' => 'select',
-    'theme hooks' => array('block','region'),
-    'group' => 'layout',
-    'default status' => 1,
-    'options' => array(
-      'option_1' => array(
-        'title' => t('Column 1'),
-        'class' => array('col-md-1'),
-      ),
-      'option_2' => array(
-        'title' => t('Column 2'),
-        'class' => array('col-md-2'),
-      ),
-      'option_3' => array(
-        'title' => t('Column 3'),
-        'class' => array('col-md-3'),
-      ),
-      'option_4' => array(
-        'title' => t('Column 4'),
-        'class' => array('col-md-4'),
-      ),
-      'option_5' => array(
-        'title' => t('Column 5'),
-        'class' => array('col-md-5'),
-      ),
-      'option_6' => array(
-        'title' => t('Column 6'),
-        'class' => array('col-md-6'),
-      ),
-      'option_7' => array(
-        'title' => t('Column 7'),
-        'class' => array('col-md-7'),
-      ),
-      'option_8' => array(
-        'title' => t('Column 8'),
-        'class' => array('col-md-8'),
-      ),
-      'option_9' => array(
-        'title' => t('Column 9'),
-        'class' => array('col-md-9'),
-      ),
-      'option_10' => array(
-        'title' => t('Column 10'),
-        'class' => array('col-md-10'),
-      ),
-      'option_11' => array(
-        'title' => t('Column 11'),
-        'class' => array('col-md-11'),
-      ),
-      'option_12' => array(
-        'title' => t('Column 12'),
-        'class' => array('col-md-12'),
-      ),
-    ),
-  );
-  $skins['concise_drupal_col-lg'] = array(
-    'title' => t('Bootstrap Column Large'),
-    'description' => t('Define the value for Bootstrap Columns large screen devices.'),
-    'type' => 'select',
-    'theme hooks' => array('block','region'),
-    'group' => 'layout',
-    'default status' => 1,
-    'options' => array(
-      'option_1' => array(
-        'title' => t('Column 1'),
-        'class' => array('col-lg-1'),
-      ),
-      'option_2' => array(
-        'title' => t('Column 2'),
-        'class' => array('col-lg-2'),
-      ),
-      'option_3' => array(
-        'title' => t('Column 3'),
-        'class' => array('col-lg-3'),
-      ),
-      'option_4' => array(
-        'title' => t('Column 4'),
-        'class' => array('col-lg-4'),
-      ),
-      'option_5' => array(
-        'title' => t('Column 5'),
-        'class' => array('col-lg-5'),
-      ),
-      'option_6' => array(
-        'title' => t('Column 6'),
-        'class' => array('col-lg-6'),
-      ),
-      'option_7' => array(
-        'title' => t('Column 7'),
-        'class' => array('col-lg-7'),
-      ),
-      'option_8' => array(
-        'title' => t('Column 8'),
-        'class' => array('col-lg-8'),
-      ),
-      'option_9' => array(
-        'title' => t('Column 9'),
-        'class' => array('col-lg-9'),
-      ),
-      'option_10' => array(
-        'title' => t('Column 10'),
-        'class' => array('col-lg-10'),
-      ),
-      'option_11' => array(
-        'title' => t('Column 11'),
-        'class' => array('col-lg-11'),
-      ),
-      'option_12' => array(
-        'title' => t('Column 12'),
-        'class' => array('col-lg-12'),
-      ),
-    ),
-  );
-
-  $skins['concise_drupal_offset'] = array(
-    'title' => t('Bootstrap Column Small'),
-    'description' => t('Define the OFFSET value for Bootstrap Columns Small.'),
-    'type' => 'select',
-    'theme hooks' => array('block','region'),
-    'group' => 'layout',
-    'default status' => 1,
-    'options' => array(
-      'option_1' => array(
-        'title' => t('1'),
-        'class' => array('offset-1'),
-      ),
-      'option_2' => array(
-        'title' => t('2'),
-        'class' => array('offset-2'),
-      ),
-      'option_3' => array(
-        'title' => t('3'),
-        'class' => array('offset-3'),
-      ),
-      'option_4' => array(
-        'title' => t('4'),
-        'class' => array('offset-4'),
-      ),
-      'option_5' => array(
-        'title' => t('5'),
-        'class' => array('offset-5'),
-      ),
-      'option_6' => array(
-        'title' => t('6'),
-        'class' => array('offset-6'),
-      ),
-      'option_7' => array(
-        'title' => t('7'),
-        'class' => array('offset-'),
-      ),
-      'option_8' => array(
-        'title' => t('8'),
-        'class' => array('offset-8'),
-      ),
-      'option_9' => array(
-        'title' => t('9'),
-        'class' => array('offset-9'),
-      ),
-      'option_10' => array(
-        'title' => t('10'),
-        'class' => array('offset-10'),
-      ),
-      'option_11' => array(
-        'title' => t('11'),
-        'class' => array('offset-11'),
-      ),
-    ),
-  );
-  $skins['concise_drupal_col-md-offset'] = array(
-    'title' => t('Bootstrap Column Medium'),
-    'description' => t('Define the OFFSET value for Bootstrap Columns Medium.'),
-    'type' => 'select',
-    'theme hooks' => array('block','region'),
-    'group' => 'layout',
-    'default status' => 1,
-    'options' => array(
-      'option_1' => array(
-        'title' => t('1'),
-        'class' => array('col-md-offset-1'),
-      ),
-      'option_2' => array(
-        'title' => t('2'),
-        'class' => array('col-md-offset-2'),
-      ),
-      'option_3' => array(
-        'title' => t('3'),
-        'class' => array('col-md-offset-3'),
-      ),
-      'option_4' => array(
-        'title' => t('4'),
-        'class' => array('col-md-offset-4'),
-      ),
-      'option_5' => array(
-        'title' => t('5'),
-        'class' => array('col-md-offset-5'),
-      ),
-      'option_6' => array(
-        'title' => t('6'),
-        'class' => array('col-md-offset-6'),
-      ),
-      'option_7' => array(
-        'title' => t('7'),
-        'class' => array('col-md-offset-'),
-      ),
-      'option_8' => array(
-        'title' => t('8'),
-        'class' => array('col-md-offset-8'),
-      ),
-      'option_9' => array(
-        'title' => t('9'),
-        'class' => array('col-md-offset-9'),
-      ),
-      'option_10' => array(
-        'title' => t('10'),
-        'class' => array('col-md-offset-10'),
-      ),
-      'option_11' => array(
-        'title' => t('11'),
-        'class' => array('col-md-offset-11'),
-      ),
-    ),
-  );
-  $skins['concise_drupal_col-lg-offset'] = array(
-    'title' => t('Bootstrap Column Large'),
-    'description' => t('Define the OFFSET value for Bootstrap Columns Large.'),
-    'type' => 'select',
-    'theme hooks' => array('block','region'),
-    'group' => 'layout',
-    'default status' => 1,
-    'options' => array(
-      'option_1' => array(
-        'title' => t('1'),
-        'class' => array('col-lg-offset-1'),
-      ),
-      'option_2' => array(
-        'title' => t('2'),
-        'class' => array('col-lg-offset-2'),
-      ),
-      'option_3' => array(
-        'title' => t('3'),
-        'class' => array('col-lg-offset-3'),
-      ),
-      'option_4' => array(
-        'title' => t('4'),
-        'class' => array('col-lg-offset-4'),
-      ),
-      'option_5' => array(
-        'title' => t('5'),
-        'class' => array('col-lg-offset-5'),
-      ),
-      'option_6' => array(
-        'title' => t('6'),
-        'class' => array('col-lg-offset-6'),
-      ),
-      'option_7' => array(
-        'title' => t('7'),
-        'class' => array('col-lg-offset-'),
-      ),
-      'option_8' => array(
-        'title' => t('8'),
-        'class' => array('col-lg-offset-8'),
-      ),
-      'option_9' => array(
-        'title' => t('9'),
-        'class' => array('col-lg-offset-9'),
-      ),
-      'option_10' => array(
-        'title' => t('10'),
-        'class' => array('col-lg-offset-10'),
-      ),
-      'option_11' => array(
-        'title' => t('11'),
-        'class' => array('col-lg-offset-11'),
-      ),
-    ),
-  );*/
-
-  $skins['concise_drupal_row'] = array(
-    'title' => t('Bootstrap Row'),
-    'type' => 'select',
-    'description' => t('Define a DIV as row.'),
-    'theme hooks' => array('block', 'region'),
-    'group' => 'layout',
-    'default status' => 1,
-    'options' => array(
-      'option_1' => array(
-        'title' => t('Row'),
-        'class' => array('row'),
-      ),
-    ),
-  );
-
-  $skins['concise_drupal_container'] = array(
-    'title' => t('Bootstrap Container'),
-    'type' => 'select',
-    'description' => t('Define a DIV as container.'),
-    'theme hooks' => array('block', 'region'),
-    'group' => 'layout',
-    'default status' => 1,
-    'options' => array(
-      'option_1' => array(
-        'title' => t('Container'),
-        'class' => array('container'),
-      ),
-    ),
-  );
-
-  $skins['concise_drupal_position'] = array(
+  $skins['concise_drupal-position'] = array(
     'title' => t('Position Container'),
     'type' => 'select',
     'description' => t('Define a DIV as Position.'),
@@ -586,7 +269,7 @@ function concise_drupal_skinr_skin_drupal_default_info() {
   );
 
 
-  $skins['concise_drupal_responsive_utility'] = array(
+  $skins['concise_drupal-responsive_utility'] = array(
     'title' => t('Hide/Show'),
     'type' => 'select',
     'description' => t('You can hide or show elements depending on certain key points, like the device size, resolution, or media (printing or screen).'),
@@ -653,7 +336,7 @@ function concise_drupal_skinr_skin_drupal_default_info() {
     ),
   );
 
-  $skins['concise_drupal_modal'] = array(
+  $skins['concise_drupal-modal'] = array(
     'title' => t('Modal Block'),
     'type' => 'checkboxes',
     'description' => t('Define a block as Modal. Replace block by button with block title as text.'),
@@ -662,14 +345,14 @@ function concise_drupal_skinr_skin_drupal_default_info() {
     'group' => 'box',
     'default status' => 1,
     'options' => array(
-      'concise_drupal_modal' => array(
+      'concise_drupal-modal' => array(
         'title' => t('Set as modal.'),
         'class' => array('modal', 'fade', 'drupal-modal'),
       ),
     ),
   );
 
-  $skins['concise_drupal_dropdown'] = array(
+  $skins['concise_drupal-dropdown'] = array(
     'title' => t('Dropdown Block'),
     'type' => 'checkboxes',
     'description' => t('Define a block as Dropdown. Replace block by button with block title as text.'),
@@ -678,37 +361,15 @@ function concise_drupal_skinr_skin_drupal_default_info() {
     'group' => 'box',
     'default status' => 1,
     'options' => array(
-      'concise_drupal_dropdown' => array(
+      'concise_drupal-dropdown' => array(
         'title' => t('Set as dropdown.'),
         'class' => array('dropdown', 'drupal-dropdown'),
       ),
     ),
   );
 
-  $skins['concise_drupal_navbar'] = array(
-    'title' => t('Navigation Bar'),
-    'type' => 'checkboxes',
-    'description' => t('Define Navigation Bar characteristics.'),
-    'theme hooks' => array('block_menu'),
-    'group' => 'box',
-    'default status' => 1,
-    'options' => array(
-      'option_1' => array(
-        'title' => t('Fixed Top'),
-        'class' => array('navbar-fixed-top'),
-      ),
-      'option_2' => array(
-        'title' => t('Fixed Bottom'),
-        'class' => array('navbar-fixed-bottom'),
-      ),
-      'option_3' => array(
-        'title' => t('Static Top'),
-        'class' => array('navbar-static-top'),
-      ),
-    ),
-  );
 
-  /*$skins['concise_drupal_collapse'] = array(
+  /*$skins['concise_drupal-collapse'] = array(
     'title' => t('Collapsible responsive menu'),
     'type' => 'checkboxes',
     'description' => t('Define a menu as responsive collapsible. Needs to define navbar toggle button, .btn-navbar.'),
@@ -716,7 +377,7 @@ function concise_drupal_skinr_skin_drupal_default_info() {
     'group' => 'box',
     'default status' => 1,
     'options' => array(
-      'concise_drupal_collapse_menu' => array(
+      'concise_drupal-collapse_menu' => array(
         'title' => t('Set as collapsible.'),
         'class' => array('nav-collapse'),
       ),

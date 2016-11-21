@@ -1,9 +1,9 @@
 <?php
-/**
- * @file
- * template.php
- */
 
+/**
+ * Include common functions used through out theme.
+ */
+include_once dirname(__FILE__) . '/theme/common.inc';
 /**
  * Override or insert variables into the page template for HTML output.
  * 
@@ -25,7 +25,6 @@ function concise_drupal_preprocess_html(&$variables) {
   }
   else {
     $variables['mobile_friendly'] = FALSE;
-  //  drupal_add_css(drupal_get_path('theme', 'concise_drupal') . '/css/no-responsive.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
   }
   
   $viewport = array(
@@ -122,32 +121,6 @@ function _concise_drupal_block_list($region) {
   return $drupal_list;
 }
 
-/**
- * Implements hook_element_info_alter().
- */
-function concise_drupal_element_info_alter(&$elements) {
-    // Element mail of module webform
-    if (module_exists('webform')) {
-        if (!empty($elements["webform_email"])) {
-              $elements["webform_email"]['#process'][] = '_concise_drupal_process_input';
-        }
-    }
-}
-/**
- * Add class form-control in fields
- */
-function _concise_drupal_process_input(&$element, &$form_state) {
-  // Only add the "form-control" class for specific element input types.
-  $types = array(
-    // Elements module.
-    'webform_email',
-  );
-  if (!empty($element['#type']) && (in_array($element['#type'], $types) || ($element['#type'] === 'file' && empty($element['#managed_file'])))) {
-    $element['#attributes']['class'][] = 'form-control';
-  }
-  return $element;
-}
-
 
 
 function _preprocess_menu(&$variables) {
@@ -169,109 +142,10 @@ function _preprocess_menu(&$variables) {
   }
 }
 
-function concise_drupal_skinr_elements($variables, $hook, $op) {
-
- // dpm($variables);
-  //dpm($hook);
- // dpm($op);
-  //$elements = array();
-  /*if ($hook == 'block') {
-    $elements['block'] = array($variables['block']->module . '__' . $variables['block']->delta);
-  }
-  return $elements;*/
-}
-
-function concise_drupal_skinr_preprocess_alter(&$skins, $context) {
-  /*dpm($skins);
- // $context['variables']['column'] = "";
-  dpm($context);
-
-  
-    foreach ($skins as $key => $skin) {
-      if ($skin->module == 'block') {
-          if($skin->skin == "concise_drupal_col-sm") {
-            $option_temp = $skin->options[0];
-            $context['variables']['column'] = $option_temp;
-          }
-      }
-    }
-  $skin_info = skinr_get_skin_info();
-
-  dpm($skin_info);*/
-}
-
-
-function concise_drupal_preprocess_skinr(&$variables, $hook) {
-  dpm($variables);
-  dpm($hook);
-}
-
-//http://api.drupalhelp.net/api/skinr/skinr.module/function/skinr_preprocess/7.2
-// http://www.rit.edu/drupal/api/drupal/sites%21all%21modules%21skinr%21skinr.api.php/function/hook_skinr_preprocess_alter/7.43
-/*
-function yourtheme_preprocess_block(&$variables) {
-  if (in_array($variables['elements']['#id'], array('mymodule_my_block'))) {
-    $variables['attributes']['class'][] = 'my-nice-block';
-  }
-}
-*/
-
 /**
- * Implements hook_preprocess_block()
+ * Declare various hook_*_alter() hooks.
+ *
+ * hook_*_alter() implementations must live (via include) inside this file so
+ * they are properly detected when drupal_alter() is invoked.
  */
- 
-function concise_drupal_preprocess_block(&$variables) {
-
-    //dpm($variables);
-  
-  // Add support for Skinr module classes http://drupal.org/project/skinr.
-  _get_column_consice($variables['classes_array'], $variables);
-
-}
-
-
-function _get_column_consice($data, &$variables) {
-
-  //dpm($variables);
-  $column_data = "";
-  $column_data_1 = "";
-  $findme   = 'column-';
-  $findme_1   = 'offset-';
-  $findme_2   = '--';
-  $num_column = array();
-  foreach ($data as $key => $value) {
-  //dpm($value);
-    $pos = strpos($value, $findme);
-    $pos_1 = strpos($value, $findme_1);
-    $pos_2 = strpos($value, $findme_2);
-    //dpm($pos_1);
-     if($pos !== false) {
-          $num_column = explode("-", $value);
-          if(isset($num_column[1]) && is_numeric($num_column[1])) {
-            $column_data_1 = $num_column[1];
-          }
-          unset($variables['classes_array'][$key]);
-       }
-      if($pos_1 !== false) {
-        $num_column_1 = explode("-", $value);
-          if(isset($num_column_1[1]) && is_numeric($num_column_1[1])) {
-           // dpm($variables);
-            $column_data .= " +".$num_column_1[1];
-          }
-          unset($variables['classes_array'][$key]);
-     }
-     if($pos_2 !== false) {
-        $text_class = explode("--", $value);
-          if(isset($text_class[1])) {
-             $variables['classes_array'][$key] = "_".$text_class[1];
-          }
-        
-         // unset($variables['classes_array'][$key]);
-     }
-  }
-
-  $variables['column'] = $column_data_1.$column_data;
-
-
-  //return isset($num_column[1]) ? $num_column[1] : '';
-}
+concise_include('concise_drupal', 'theme/alter.inc');

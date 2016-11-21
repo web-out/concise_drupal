@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "concise-ui",
+        "scope": null,
+        "escapedName": "concise-ui",
+        "name": null,
+        "rawSpec": "concise-ui",
+        "spec": "E:\\Trabajos\\SASSS\\concise\\concise-ui",
+        "type": "directory"
+      },
+      "E:\\Trabajos\\SASSS\\concise"
+    ]
+  ],
+  "_from": "concise-ui",
+  "_id": "concise-ui@0.2.0",
+  "_inCache": true,
+  "_location": "/concise-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "concise-ui",
+    "scope": null,
+    "escapedName": "concise-ui",
+    "name": null,
+    "rawSpec": "concise-ui",
+    "spec": "E:\\Trabajos\\SASSS\\concise\\concise-ui",
+    "type": "directory"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:concise-ui",
+  "_shasum": "139c1a5c250f9e48286fec44c11cf16086fe8381",
+  "_shrinkwrap": null,
+  "_spec": "concise-ui",
+  "_where": "E:\\Trabajos\\SASSS\\concise",
+  "bugs": {
+    "url": "https://github.com/ConciseCSS/concise-ui/issues"
+  },
+  "dependencies": {},
+  "description": "Basic user interface kit for Concise Framework",
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "concise-cli": "^0.4.1",
+    "concise.css": "github:concisecss/concise.css#master",
+    "cssnano-cli": "^1.0.5",
+    "http-server": "^0.9.0",
+    "jake": "^8.0.15",
+    "livereload": "^0.6.0",
+    "stylestats": "^6.3.0"
+  },
+  "homepage": "https://github.com/ConciseCSS/concise-ui#readme",
+  "keywords": [
+    "css",
+    "concise",
+    "ui",
+    "user",
+    "interface",
+    "kit",
+    "framework",
+    "add-on"
+  ],
+  "license": "MIT",
+  "name": "concise-ui",
+  "optionalDependencies": {},
+  "readme": "\n# Concise UI\n\n> Basic user interface kit for Concise CSS\n\nConcise UI is one of the official add-ons for Concise CSS. It provides a basic user interface kit to help you build your websites quicker.\n\nComponents follow the [RSCSS](http://rscss.io/) coding convention.\n\n## Installation\n\n### Using NPM\n\n```\nnpm install concise-ui\n```\n\n```scss\n@import 'node_modules/concise-ui/concise-ui'\n```\n\n### Using the CDN\n\n```HTML\n<!-- Normal - Latest version -->\n<link rel=\"stylesheet\" href=\"https://cdn.concisecss.com/concise-ui/concise-ui.css\">\n\n<!-- Minified - Latest version -->\n<link rel=\"stylesheet\" href=\"https://cdn.concisecss.com/concise-ui/concise-ui.min.css\">\n```\n\nThat is for the latest version, if you want to use a specific one you can do something like the following:\n\n```HTML\n<!-- Normal - Specific version -->\n<link rel=\"stylesheet\" href=\"https://cdn.concisecss.com/concise-ui/v0.2.0/concise-ui.css\">\n\n<!-- Minified - Specific version -->\n<link rel=\"stylesheet\" href=\"https://cdn.concisecss.com/concise-ui/v0.2.0/concise-ui.min.css\">\n```\n\n## License\n\nMIT - James Kolce, Keenan Payne & Concise CSS Contributors.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ConciseCSS/concise-ui.git"
+  },
+  "scripts": {
+    "build": "jake build",
+    "start": "jake default",
+    "stats": "stylestats dist/concise-utils.css"
+  },
+  "version": "0.2.0"
+}

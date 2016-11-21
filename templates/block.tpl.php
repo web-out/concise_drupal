@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Override of Bootstrap block.tpl.php.
+ * Override of Concise block.tpl.php.
  */
 ?>
-<section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>" column="<?php print isset($column) ? $column : ''; ?>">
+<section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>" column="<?php print isset($column) ? $column : ''; ?>" <?php print $attributes; ?>>
 <?php //dpm($skinr); ?>
 
 <?php print render($title_prefix); ?>

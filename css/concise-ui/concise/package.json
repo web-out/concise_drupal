@@ -1,0 +1,42 @@
+{
+  "name": "concise.css",
+  "version": "4.0.0",
+  "description": "A lightweight front-end framework that provides functionality without the bloat.",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web",
+    "lightweight",
+    "postcss"
+  ],
+  "homepage": "http://concisecss.com",
+  "bugs": "https://github.com/ConciseCSS/concise.css/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ConciseCSS/concise.css"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "concise-cli": "^0.4.1",
+    "cssnano-cli": "^1.0.4",
+    "http-server": "^0.9.0",
+    "jake": "^8.0.15",
+    "livereload": "^0.6.0",
+    "stylestats": "^6.3.0"
+  },
+  "scripts": {
+    "build": "jake build",
+    "build:dev": "jake default",
+    "stats": "stylestats dist/concise.css",
+    "stats:min": "stylestats dist/concise.min.css"
+  }
+}

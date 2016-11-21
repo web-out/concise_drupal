@@ -12,7 +12,7 @@
            <div class="container">
              <div class="navbar-header">
               <?php if (!empty($logo)): ?>
-                <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+                <a class="logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
                   <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
                 </a>
               <?php endif; ?>
@@ -48,38 +48,29 @@
 </header>
 
 <?php if (!empty($page['slider'])): ?>
-  <section id="slider">
+  <section id="slider" container>
         <?php print render($page['slider']); ?>
   </section>
 <?php endif; ?>
 
-<section>
-  
-</section>
-
-<section class="main-container" container>
- <div class="container">
-  <header role="banner" id="page-header">
-    <?php if (!empty($site_slogan)): ?>
-      <p class="lead"><?php print $site_slogan; ?></p>
-    <?php endif; ?>
-  </header> <!-- /#header -->
+<section class="main-container">
+ <div container>
 
   <div class="row"> 
 
     <?php if (!empty($page['preface'])): ?>
-      <div id="preface" class="col-xs-12">
+      <div id="preface">
         <?php print render($page['preface']); ?>
       </div>  <!-- /#preface -->
     <?php endif; ?>  
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside column="<?php print $sidebar_first_width; ?>" role="complementary">
+      <aside column="<?php print $sidebar_first_width; ?>">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>  
 
-    <section column="<?php print $content_width; ?>" container>
+    <section column="<?php print $content_width; ?>">
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted hero-unit"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
@@ -129,10 +120,11 @@
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
-      <aside column="<?php print $sidebar_second_width; ?>" role="complementary">
+      <aside column="<?php print $sidebar_second_width; ?>">
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
+
   </div>
 
     <?php if (!empty($page['postcript_top'])): ?>
