@@ -1,12 +1,3 @@
-.grid--example {
-    background-color: #c65146;
-    color: white;
-    display: inline-block;
-    margin-bottom: 0.5em !important;
-    text-align: center;
-    width: 100%;
-}
-
 .adminimal-menu #admin-menu-wrapper #admin-menu-account.dropdown,.adminimal-menu #admin-menu-wrapper #admin-menu-users.dropdown,
 .adminimal-menu #admin-menu-wrapper #admin-menu-icon.dropdown,.adminimal-menu #admin-menu-wrapper #admin-menu-menu.dropdown {
 	display: inherit !important;
