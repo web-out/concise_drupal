@@ -3,7 +3,6 @@
  * @file
  * Implementation of a Skinr plugin.
  */
-
 /**
  * Implements hook_skinr_group_info().
  *
@@ -28,14 +27,13 @@
  * THEMENAME_PLUGINNAME_skinr_group_info(), or
  * MODULENAME_PLUGINNAME_skinr_group_info().
  */
-/*function concise_drupal_skinr_group_info() {
-  $groups['concise_drupal-links'] = array(
+function concise_drupal_skinr_group_info() {
+  $groups['concise_drupal_links'] = array(
     'title' => t('Links'),
     'description' => t('Choose one or more styles to apply to links and menus.'),
   );
   return $groups;
-}*/
-
+}
 /**
  * Implements hook_skinr_skin_info().
  *
@@ -121,255 +119,467 @@
  * THEMENAME_PLUGINNAME_skinr_skin_info(), or
  * MODULENAME_PLUGINNAME_skinr_skin_info().
  */
-function concise_drupal_skinr_skin_concise_default_info() {
+function concise_drupal_skinr_skin_drupal_default_info() {
   $skins = array();
-
-  $skins['concise_drupal-col'] = array(
-    'title' => t('Drupal Column '),
-    'description' => t('Define the value for Bootstrap Columns small screen devices.'),
+  $skins['concise_drupal_col-sm'] = array(
+    'title' => t('Concise Column Small'),
+    'description' => t('Define the value for Concise Columns small screen devices.'),
     'type' => 'select',
+    'theme hooks' => array('block','region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Span 1'),
+        'class' => array('col-sm-1'),
+      ),
+      'option_2' => array(
+        'title' => t('Span 2'),
+        'class' => array('col-sm-2'),
+      ),
+      'option_3' => array(
+        'title' => t('Span 3'),
+        'class' => array('col-sm-3'),
+      ),
+      'option_4' => array(
+        'title' => t('Span 4'),
+        'class' => array('col-sm-4'),
+      ),
+      'option_5' => array(
+        'title' => t('Span 5'),
+        'class' => array('col-sm-5'),
+      ),
+      'option_6' => array(
+        'title' => t('Span 6'),
+        'class' => array('col-sm-6'),
+      ),
+      'option_7' => array(
+        'title' => t('Span 7'),
+        'class' => array('col-sm-7'),
+      ),
+      'option_8' => array(
+        'title' => t('Span 8'),
+        'class' => array('col-sm-8'),
+      ),
+      'option_9' => array(
+        'title' => t('Span 9'),
+        'class' => array('col-sm-9'),
+      ),
+      'option_10' => array(
+        'title' => t('Span 10'),
+        'class' => array('col-sm-10'),
+      ),
+      'option_11' => array(
+        'title' => t('Span 11'),
+        'class' => array('col-sm-11'),
+      ),
+      'option_12' => array(
+        'title' => t('Span 12'),
+        'class' => array('col-sm-12'),
+      ),
+    ),
+  );
+  $skins['concise_drupal_col-md'] = array(
+    'title' => t('Concise Column Medium'),
+    'description' => t('Define the value for Concise Columns medium screen devices.'),
+    'type' => 'select',
+    'theme hooks' => array('block','region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Span 1'),
+        'class' => array('col-md-1'),
+      ),
+      'option_2' => array(
+        'title' => t('Span 2'),
+        'class' => array('col-md-2'),
+      ),
+      'option_3' => array(
+        'title' => t('Span 3'),
+        'class' => array('col-md-3'),
+      ),
+      'option_4' => array(
+        'title' => t('Span 4'),
+        'class' => array('col-md-4'),
+      ),
+      'option_5' => array(
+        'title' => t('Span 5'),
+        'class' => array('col-md-5'),
+      ),
+      'option_6' => array(
+        'title' => t('Span 6'),
+        'class' => array('col-md-6'),
+      ),
+      'option_7' => array(
+        'title' => t('Span 7'),
+        'class' => array('col-md-7'),
+      ),
+      'option_8' => array(
+        'title' => t('Span 8'),
+        'class' => array('col-md-8'),
+      ),
+      'option_9' => array(
+        'title' => t('Span 9'),
+        'class' => array('col-md-9'),
+      ),
+      'option_10' => array(
+        'title' => t('Span 10'),
+        'class' => array('col-md-10'),
+      ),
+      'option_11' => array(
+        'title' => t('Span 11'),
+        'class' => array('col-md-11'),
+      ),
+      'option_12' => array(
+        'title' => t('Span 12'),
+        'class' => array('col-md-12'),
+      ),
+    ),
+  );
+  $skins['concise_drupal_col-lg'] = array(
+    'title' => t('Concise Column Large'),
+    'description' => t('Define the value for Concise Columns large screen devices.'),
+    'type' => 'select',
+    'theme hooks' => array('block','region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Span 1'),
+        'class' => array('col-lg-1'),
+      ),
+      'option_2' => array(
+        'title' => t('Span 2'),
+        'class' => array('col-lg-2'),
+      ),
+      'option_3' => array(
+        'title' => t('Span 3'),
+        'class' => array('col-lg-3'),
+      ),
+      'option_4' => array(
+        'title' => t('Span 4'),
+        'class' => array('col-lg-4'),
+      ),
+      'option_5' => array(
+        'title' => t('Span 5'),
+        'class' => array('col-lg-5'),
+      ),
+      'option_6' => array(
+        'title' => t('Span 6'),
+        'class' => array('col-lg-6'),
+      ),
+      'option_7' => array(
+        'title' => t('Span 7'),
+        'class' => array('col-lg-7'),
+      ),
+      'option_8' => array(
+        'title' => t('Span 8'),
+        'class' => array('col-lg-8'),
+      ),
+      'option_9' => array(
+        'title' => t('Span 9'),
+        'class' => array('col-lg-9'),
+      ),
+      'option_10' => array(
+        'title' => t('Span 10'),
+        'class' => array('col-lg-10'),
+      ),
+      'option_11' => array(
+        'title' => t('Span 11'),
+        'class' => array('col-lg-11'),
+      ),
+      'option_12' => array(
+        'title' => t('Span 12'),
+        'class' => array('col-lg-12'),
+      ),
+    ),
+  );
+  $skins['concise_drupal_col-sm-offset'] = array(
+    'title' => t('Concise Column Offset Small'),
+    'description' => t('Define the OFFSET value for Concise Columns Small.'),
+    'type' => 'select',
+    'theme hooks' => array('block','region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Offset 1'),
+        'class' => array('col-sm-offset-1'),
+      ),
+      'option_2' => array(
+        'title' => t('Offset 2'),
+        'class' => array('col-sm-offset-2'),
+      ),
+      'option_3' => array(
+        'title' => t('Offset 3'),
+        'class' => array('col-sm-offset-3'),
+      ),
+      'option_4' => array(
+        'title' => t('Offset 4'),
+        'class' => array('col-sm-offset-4'),
+      ),
+      'option_5' => array(
+        'title' => t('Offset 5'),
+        'class' => array('col-sm-offset-5'),
+      ),
+      'option_6' => array(
+        'title' => t('Offset 6'),
+        'class' => array('col-sm-offset-6'),
+      ),
+      'option_7' => array(
+        'title' => t('Offset 7'),
+        'class' => array('col-sm-offset-'),
+      ),
+      'option_8' => array(
+        'title' => t('Offset 8'),
+        'class' => array('col-sm-offset-8'),
+      ),
+      'option_9' => array(
+        'title' => t('Offset 9'),
+        'class' => array('col-sm-offset-9'),
+      ),
+      'option_10' => array(
+        'title' => t('Offset 10'),
+        'class' => array('col-sm-offset-10'),
+      ),
+      'option_11' => array(
+        'title' => t('Offset 11'),
+        'class' => array('col-sm-offset-11'),
+      ),
+    ),
+  );
+  $skins['concise_drupal_col-md-offset'] = array(
+    'title' => t('Concise Column Offset Medium'),
+    'description' => t('Define the OFFSET value for Concise Columns Medium.'),
+    'type' => 'select',
+    'theme hooks' => array('block','region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Offset 1'),
+        'class' => array('col-md-offset-1'),
+      ),
+      'option_2' => array(
+        'title' => t('Offset 2'),
+        'class' => array('col-md-offset-2'),
+      ),
+      'option_3' => array(
+        'title' => t('Offset 3'),
+        'class' => array('col-md-offset-3'),
+      ),
+      'option_4' => array(
+        'title' => t('Offset 4'),
+        'class' => array('col-md-offset-4'),
+      ),
+      'option_5' => array(
+        'title' => t('Offset 5'),
+        'class' => array('col-md-offset-5'),
+      ),
+      'option_6' => array(
+        'title' => t('Offset 6'),
+        'class' => array('col-md-offset-6'),
+      ),
+      'option_7' => array(
+        'title' => t('Offset 7'),
+        'class' => array('col-md-offset-'),
+      ),
+      'option_8' => array(
+        'title' => t('Offset 8'),
+        'class' => array('col-md-offset-8'),
+      ),
+      'option_9' => array(
+        'title' => t('Offset 9'),
+        'class' => array('col-md-offset-9'),
+      ),
+      'option_10' => array(
+        'title' => t('Offset 10'),
+        'class' => array('col-md-offset-10'),
+      ),
+      'option_11' => array(
+        'title' => t('Offset 11'),
+        'class' => array('col-md-offset-11'),
+      ),
+    ),
+  );
+  $skins['concise_drupal_col-lg-offset'] = array(
+    'title' => t('Concise Column Offset Large'),
+    'description' => t('Define the OFFSET value for Concise Columns Large.'),
+    'type' => 'select',
+    'theme hooks' => array('block','region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Offset 1'),
+        'class' => array('col-lg-offset-1'),
+      ),
+      'option_2' => array(
+        'title' => t('Offset 2'),
+        'class' => array('col-lg-offset-2'),
+      ),
+      'option_3' => array(
+        'title' => t('Offset 3'),
+        'class' => array('col-lg-offset-3'),
+      ),
+      'option_4' => array(
+        'title' => t('Offset 4'),
+        'class' => array('col-lg-offset-4'),
+      ),
+      'option_5' => array(
+        'title' => t('Offset 5'),
+        'class' => array('col-lg-offset-5'),
+      ),
+      'option_6' => array(
+        'title' => t('Offset 6'),
+        'class' => array('col-lg-offset-6'),
+      ),
+      'option_7' => array(
+        'title' => t('Offset 7'),
+        'class' => array('col-lg-offset-'),
+      ),
+      'option_8' => array(
+        'title' => t('Offset 8'),
+        'class' => array('col-lg-offset-8'),
+      ),
+      'option_9' => array(
+        'title' => t('Offset 9'),
+        'class' => array('col-lg-offset-9'),
+      ),
+      'option_10' => array(
+        'title' => t('Offset 10'),
+        'class' => array('col-lg-offset-10'),
+      ),
+      'option_11' => array(
+        'title' => t('Offset 11'),
+        'class' => array('col-lg-offset-11'),
+      ),
+    ),
+  );
+  $skins['concise_drupal_row'] = array(
+    'title' => t('Concise Row'),
+    'type' => 'select',
+    'description' => t('Define a DIV as row.'),
     'theme hooks' => array('block', 'region'),
     'group' => 'layout',
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Column 1'),
-        'class' => array('column-1'),
-      ),
-      'option_2' => array(
-        'title' => t('Column 2'),
-        'class' => array('column-2'),
-      ),
-      'option_3' => array(
-        'title' => t('Column 3'),
-        'class' => array('column-3'),
-      ),
-      'option_4' => array(
-        'title' => t('Column 4'),
-        'class' => array('column-4'),
-      ),
-      'option_5' => array(
-        'title' => t('Column 5'),
-        'class' => array('column-5'),
-      ),
-      'option_6' => array(
-        'title' => t('Column 6'),
-        'class' => array('column-6'),
-      ),
-      'option_7' => array(
-        'title' => t('Column 7'),
-        'class' => array('column-7'),
-      ),
-      'option_8' => array(
-        'title' => t('Column 8'),
-        'class' => array('column-8'),
-      ),
-      'option_9' => array(
-        'title' => t('Column 9'),
-        'class' => array('column-9'),
-      ),
-      'option_10' => array(
-        'title' => t('Column 10'),
-        'class' => array('column-10'),
-      ),
-      'option_11' => array(
-        'title' => t('Column 11'),
-        'class' => array('column-11'),
-      ),
-      'option_12' => array(
-        'title' => t('Column 12'),
-        'class' => array('column-12'),
+        'title' => t('Row'),
+        'class' => array('row'),
       ),
     ),
   );
-
-  $skins['concise_drupal-col_offsets'] = array(
-    'title' => t('Drupal Column OFFSETS'),
-    'description' => t('There are cases where you need to move a column to the right side without creating an empty column next to it. For this, you can use column offsets, which are pretty simple to use.'),
+  $skins['concise_drupal_container'] = array(
+    'title' => t('Concise Container'),
     'type' => 'select',
-    'theme hooks' => array('block'),
-    'group' => 'layout',
-    'default status' => 1,
-    'options' => array(
-      'option_1' => array(
-        'title' => t('+1'),
-        'class' => array('offset-1'),
-      ),
-      'option_2' => array(
-        'title' => t('+2'),
-        'class' => array('offset-2'),
-      ),
-      'option_3' => array(
-        'title' => t('+3'),
-        'class' => array('offset-3'),
-      ),
-      'option_4' => array(
-        'title' => t('+4'),
-        'class' => array('offset-4'),
-      ),
-      'option_5' => array(
-        'title' => t('+5'),
-        'class' => array('offset-5'),
-      ),
-      'option_6' => array(
-        'title' => t('+6'),
-        'class' => array('offset-6'),
-      ),
-      'option_7' => array(
-        'title' => t('+7'),
-        'class' => array('offset-7'),
-      ),
-      'option_8' => array(
-        'title' => t('+8'),
-        'class' => array('offset-8'),
-      ),
-      'option_9' => array(
-        'title' => t('+9'),
-        'class' => array('offset-9'),
-      ),
-      'option_10' => array(
-        'title' => t('+10'),
-        'class' => array('offset-10'),
-      ),
-      'option_11' => array(
-        'title' => t('+11'),
-        'class' => array('offset-11'),
-      ),
-      'option_12' => array(
-        'title' => t('+12'),
-        'class' => array('offset-12'),
-      ),
-    ),
-  );
-  $skins['concise_drupal-position'] = array(
-    'title' => t('Position Container'),
-    'type' => 'select',
-    'description' => t('Define a DIV as Position.'),
+    'description' => t('Define a DIV as container.'),
     'theme hooks' => array('block', 'region'),
     'group' => 'layout',
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Position absolute'),
-        'class' => array('--abs'),
-      ),
-      'option_2' => array(
-        'title' => t('Position relative'),
-        'class' => array('--rel'),
-      ),
-      'option_3' => array(
-        'title' => t('Position static'),
-        'class' => array('--sta'),
-      ),
-      'option_4' => array(
-        'title' => t('Position fixed'),
-        'class' => array('--fix'),
+        'title' => t('Container'),
+        'class' => array('container'),
       ),
     ),
   );
-
-
-  $skins['concise_drupal-responsive_utility'] = array(
-    'title' => t('Hide/Show'),
+  $skins['concise_drupal_responsive_utility'] = array(
+    'title' => t('Concise Responsive Utility Classes'),
     'type' => 'select',
-    'description' => t('You can hide or show elements depending on certain key points, like the device size, resolution, or media (printing or screen).'),
+    'description' => t('Definitions for responsive classes to show hide blocks or regions.'),
     'theme hooks' => array('block', 'region', 'node'),
     'group' => 'layout',
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Visible Phone xs'),
-        'class' => array('--show-xs'),
+        'title' => t('Visible Phone'),
+        'class' => array('visible-xs'),
       ),
       'option_2' => array(
         'title' => t('Visible Tablet'),
-        'class' => array('show-s'),
+        'class' => array('visible-sm'),
       ),
       'option_3' => array(
         'title' => t('Visible Desktop'),
-        'class' => array('--show-m'),
+        'class' => array('visible-md'),
       ),
       'option_4' => array(
         'title' => t('Visible Large Screen'),
-        'class' => array('--show-l'),
+        'class' => array('visible-lg'),
       ),
       'option_5' => array(
-        'title' => t('Visible Extra Large'),
-        'class' => array('--show-xl'),
+        'title' => t('Hidden Phone'),
+        'class' => array('hidden-xs'),
       ),
       'option_6' => array(
-        'title' => t('Visible only on high density (retina) device'),
-        'class' => array('--show-hd'),
+        'title' => t('Hidden Tablet'),
+        'class' => array('hidden-sm'),
       ),
       'option_7' => array(
-        'title' => t('Hidden Phone'),
-        'class' => array('--hide-xs'),
+        'title' => t('Hidden Desktop'),
+        'class' => array('hidden-md'),
       ),
       'option_8' => array(
-        'title' => t('Hidden Tablet'),
-        'class' => array('--hide-s'),
-      ),
-      'option_9' => array(
-        'title' => t('Hidden Desktop'),
-        'class' => array('--hide-m'),
-      ),
-      'option_10' => array(
         'title' => t('Hidden Large Screen'),
-        'class' => array('--hide-l'),
-      ),
-      'option_11' => array(
-        'title' => t('Hidden Extra Large'),
-        'class' => array('--hide-xl'),
-      ),
-      'option_12' => array(
-        'title' => t('Hidden only on high density (retina) device'),
-        'class' => array('--hide-hd'),
-      ),
-      'option_13' => array(
-        'title' => t('Show only on print'),
-        'class' => array('--show-print'),
-      ),
-      'option_14' => array(
-        'title' => t('Hidden only on print'),
-        'class' => array('--hide-print'),
+        'class' => array('hidden-lg'),
       ),
     ),
   );
-
-  $skins['concise_drupal-modal'] = array(
+  $skins['concise_drupal_modal'] = array(
     'title' => t('Modal Block'),
     'type' => 'checkboxes',
     'description' => t('Define a block as Modal. Replace block by button with block title as text.'),
-    //'js' => array('concise_default.js'),
+    'js' => array('drupal_default.js'),
     'theme hooks' => array('block'),
     'group' => 'box',
     'default status' => 1,
     'options' => array(
-      'concise_drupal-modal' => array(
+      'concise_drupal_modal' => array(
         'title' => t('Set as modal.'),
         'class' => array('modal', 'fade', 'drupal-modal'),
       ),
     ),
   );
-
-  $skins['concise_drupal-dropdown'] = array(
+  $skins['concise_drupal_dropdown'] = array(
     'title' => t('Dropdown Block'),
     'type' => 'checkboxes',
     'description' => t('Define a block as Dropdown. Replace block by button with block title as text.'),
-    'js' => array('concise_default.js'),
+    'js' => array('drupal_default.js'),
     'theme hooks' => array('block'),
     'group' => 'box',
     'default status' => 1,
     'options' => array(
-      'concise_drupal-dropdown' => array(
+      'concise_drupal_dropdown' => array(
         'title' => t('Set as dropdown.'),
         'class' => array('dropdown', 'drupal-dropdown'),
       ),
     ),
   );
-
-
-  /*$skins['concise_drupal-collapse'] = array(
+  $skins['concise_drupal_navbar'] = array(
+    'title' => t('Navigation Bar'),
+    'type' => 'checkboxes',
+    'description' => t('Define Navigation Bar characteristics.'),
+    'theme hooks' => array('block_menu'),
+    'group' => 'box',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Fixed Top'),
+        'class' => array('navbar-fixed-top'),
+      ),
+      'option_2' => array(
+        'title' => t('Fixed Bottom'),
+        'class' => array('navbar-fixed-bottom'),
+      ),
+      'option_3' => array(
+        'title' => t('Static Top'),
+        'class' => array('navbar-static-top'),
+      ),
+    ),
+  );
+  $skins['concise_drupal_collapse'] = array(
     'title' => t('Collapsible responsive menu'),
     'type' => 'checkboxes',
     'description' => t('Define a menu as responsive collapsible. Needs to define navbar toggle button, .btn-navbar.'),
@@ -377,12 +587,11 @@ function concise_drupal_skinr_skin_concise_default_info() {
     'group' => 'box',
     'default status' => 1,
     'options' => array(
-      'concise_drupal-collapse_menu' => array(
+      'concise_drupal_collapse_menu' => array(
         'title' => t('Set as collapsible.'),
         'class' => array('nav-collapse'),
       ),
     ),
-  );*/
-
+  );
   return $skins;
 }
