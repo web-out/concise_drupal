@@ -119,7 +119,7 @@ function concise_drupal_skinr_group_info() {
  * THEMENAME_PLUGINNAME_skinr_skin_info(), or
  * MODULENAME_PLUGINNAME_skinr_skin_info().
  */
-function concise_drupal_skinr_skin_drupal_default_info() {
+function concise_drupal_skinr_skin_concise_default_info() {
   $skins = array();
   $skins['concise_drupal_col-sm'] = array(
     'title' => t('Concise Column Small'),

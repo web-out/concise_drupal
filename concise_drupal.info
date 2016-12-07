@@ -26,7 +26,6 @@ regions[footer_development]  = 'Footer Development'
 
 
 stylesheets[all][] = css/concise/concise.css
-stylesheets[all][] = css/concise/style.css
 stylesheets[all][] = css/concise-utils/dist/concise-utils.css
 stylesheets[all][] = css/concise-ui/dist/concise-ui.css
 stylesheets[all][] = css/style.css

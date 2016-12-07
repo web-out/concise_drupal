@@ -11,7 +11,7 @@
  */
  
 function concise_drupal_preprocess_block(&$variables) {
-  _get_column_consice($variables['classes_array'], $variables);
+  //_get_column_consice($variables['classes_array'], $variables);
 
 }
 

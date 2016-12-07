@@ -61,8 +61,8 @@ function concise_drupal_html_head_alter(&$head_elements) {
  */
 function concise_drupal_preprocess_page(&$variables) {
   $variables['content_width'] = _concise_drupal_content_width();
-  $variables['sidebar_first_width'] = theme_get_setting('sidebar_first_width');
-  $variables['sidebar_second_width'] = theme_get_setting('sidebar_second_width');
+  $variables['sidebar_first_width'] = 'col-lg-' . theme_get_setting('sidebar_first_width');
+  $variables['sidebar_second_width'] = 'col-lg-' . theme_get_setting('sidebar_second_width');
   _preprocess_menu($variables);
 
 
@@ -98,7 +98,7 @@ function _concise_drupal_content_width() {
   $sidebar_first_width = (_concise_drupal_block_list('sidebar_first')) ? theme_get_setting('sidebar_first_width') : 0;
   $sidebar_second_width = (_concise_drupal_block_list('sidebar_second')) ? theme_get_setting('sidebar_second_width') : 0;
   $content_width = 12 - $sidebar_first_width - $sidebar_second_width;
-  $content_width = $content_width;
+  $content_width = "col-lg-" . $content_width;
   return $content_width;
 }
 

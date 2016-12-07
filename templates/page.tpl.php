@@ -4,7 +4,7 @@
  * @file
  */
 ?>
-<header id="navbar" role="banner" container>
+<header id="navbar" role="banner">
   <div class="container">
       <div class="navbar-inner">
          <div id="main-navs">
@@ -47,15 +47,17 @@
 </header>
 
 <?php if (!empty($page['slider'])): ?>
-  <section id="slider" container>
-        <?php print render($page['slider']); ?>
+  <section id="slider">
+       <div class="container">
+         <?php print render($page['slider']); ?>
+       </div>
   </section>
 <?php endif; ?>
 
 <section class="main-container">
- <div container>
+ <div class="container">
 
-  <div class="row"> 
+  <div class="grid"> 
 
     <?php if (!empty($page['preface'])): ?>
       <div id="preface">
@@ -64,12 +66,12 @@
     <?php endif; ?>  
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside column="<?php print $sidebar_first_width; ?>">
+      <aside class="column <?php print $sidebar_first_width; ?>">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>  
 
-    <section column="<?php print $content_width; ?>">
+    <section class="column <?php print $content_width; ?>">
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted hero-unit"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
@@ -119,7 +121,7 @@
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
-      <aside column="<?php print $sidebar_second_width; ?>">
+      <aside class="column <?php print $sidebar_second_width; ?>">
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
@@ -145,11 +147,11 @@
 </section>
 
 
-<footer class="footer" container>
+<footer class="footer" >
     <div id="footer-inner" class="container">
     <?php print render($page['footer']); ?>
     </div>
 </footer>
-<section id="development" container>
+<section id="development">
    <div class="container"> <?php print render($page['footer_development']); ?></div>
 </section>
